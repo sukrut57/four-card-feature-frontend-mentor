@@ -1,0 +1,206 @@
+@import url(fonts/fonts.css);
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/*global styles*/
+
+:root {
+    --primary-color-red: hsl(0, 78%, 62%);
+    --primary-color-cyan: hsl(180, 62%, 55%);
+    --primary-color-orange: hsl(34, 97%, 64%);
+    --primary-color-blue: hsl(212, 86%, 64%);
+
+    --neutral-color-dark-blue: hsl(234, 12%, 34%);
+    --neutral-color-grayish-blue: hsl(229, 6%, 66%);
+    --neutral-color-very-light-gray: hsl(0, 0%, 98%);
+
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9375rem;
+    display: grid;
+    place-content: center;
+    gap:1.5rem;
+    min-height: 100vh;
+    max-width: 100%;
+    background-color: var(--neutral-color-very-light-gray);
+}
+
+.container{
+    min-width:18rem;
+    padding: 1rem 0.5rem;
+    background-color: var(--neutral-color-very-light-gray);
+}
+
+
+.title,
+.subtitle{
+    text-align: center;
+    font-weight: 200;
+    font-size: 1.5rem;
+    font-stretch:extra-expanded;
+}
+
+.title{
+    color: var(--neutral-color-grayish-blue);
+    font-weight: 500;
+}
+
+.subtitle{
+    display: block;
+    font-weight: bold;
+    color: var(--neutral-color-dark-blue);
+}
+
+.context{
+    color: var(--neutral-color-grayish-blue);
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.card-container{
+    display: grid;
+    gap:1rem;
+    padding: 2rem 2rem;
+}
+
+.card{
+    position: relative;
+    height: 12rem;
+    padding: 1rem;
+    box-shadow: 3px 5px 10px var(--neutral-color-grayish-blue);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--neutral-color-dark-blue);
+}
+
+.card img{
+    width:45px;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+}
+
+.card p{
+    color: var(--neutral-color-grayish-blue);
+}
+
+.card:nth-child(1) {
+    border-top: 5px solid;
+    border-top-color: var(--primary-color-cyan);
+} 
+.card:nth-child(2) {
+    border-top: 5px solid;
+    border-top-color: var(--primary-color-red);
+} 
+.card:nth-child(3) {
+    border-top: 5px solid;
+    border-top-color: var(--primary-color-orange);
+} 
+
+.card:nth-child(4) {
+    border-top: 5px solid;
+    border-top-color: var(--primary-color-blue);
+} 
+
+
+@media (min-width:950px){
+    .container{
+        min-width: 30rem;
+        place-content: center;
+    }
+
+    .card-container{
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+        padding: 2rem 2rem;
+    }
+
+    .card{
+        width: 18rem;
+        border-radius: 0.3rem;
+    }
+
+    .card:nth-child(1){
+        grid-row: 1/3;
+        margin-top: 7rem;
+    }
+
+    .card:nth-child(2){
+        grid-column: 2/3;
+    }
+
+    .card:nth-child(3){
+        grid-row: 2/3;
+    }
+      
+    .card:nth-child(4){
+        grid-row: 1/3;
+        margin-top: 7rem;
+
+    }
+
+    .card img{
+        width: 60px;
+    }
+    
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
